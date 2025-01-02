@@ -1,17 +1,13 @@
-import express from "express";
-import cors from 'cors';
-import dotenv from "dotenv";
-
-import Connection from "./database/db.js";
-import Router from "./routes/route.js";
-
+require('dotenv').config();
+const express = require('express');
+const cors = require('cors');
+const connection = require('./database/db');
 const app = express();
-dotenv.config();
 
 app.use(cors());
-app.use('/', Router);
-
+app.use(express.json());
+app.use('/news', require('./routes/newsRoute'));
 const PORT = process.env.PORT || 8000;
 
-Connection();
+connection();
 app.listen(PORT, () => console.log(`Server is running on PORT ${PORT}`));

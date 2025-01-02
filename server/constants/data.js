@@ -1,4 +1,4 @@
-export const data = [
+module.exports = data = [
   {
     "source": {
       "id": "business-insider",

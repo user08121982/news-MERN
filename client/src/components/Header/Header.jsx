@@ -1,6 +1,6 @@
 import { AppBar, Toolbar, styled } from "@mui/material";
-import { Menu } from "@mui/icons-material";
 import { Link } from "@mui/material";
+import './Header.css';
 
 const StyledApp = styled(AppBar)`
   background: #000;
@@ -10,16 +10,15 @@ const StyledApp = styled(AppBar)`
   top:0;
 `;
 
-const MenuIcon = styled(Menu)`
-  color: #fff;
-`;
-
-const Header = () => {
+const Header = ({ onQueryChange }) => {
   return (
     <StyledApp position="relative">
       <Toolbar>
-        <MenuIcon />
-        <h2 style={{ margin: "auto", paddingTop: "10px" }}>
+        <div className="search-box-container">
+          &#128269;
+          <input type="text" placeholder="Search..." onChange={e => onQueryChange(e.target.value)} className="search-box" />
+        </div>
+        <h2 style={{ margin: "auto" }}>
           Welcome to NewsApp
         </h2>
         <Link style={{ textAlign: "right", color: "#fff", height: "20px" }} href="https://github.com/user08121982/news-MERN" > About </Link>

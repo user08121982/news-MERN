@@ -1,5 +1,5 @@
-import { data } from "./constants/data.js";
-import News from "./model/news-schema.js";
+const data = require("./constants/data.js");
+const News = require("./model/news-schema.js");
 
 const DefaultData = async () => {
   try {
@@ -10,4 +10,4 @@ const DefaultData = async () => {
   }
 };
 
-export default DefaultData;
+module.exports = DefaultData;

@@ -1,4 +1,4 @@
-import mongoose from "mongoose";
+const mongoose = require("mongoose");
 
 const newsSchema = new mongoose.Schema({
   source: {
@@ -25,6 +25,10 @@ const newsSchema = new mongoose.Schema({
     required: true,
     unique: true,
   },
+  category: {
+    type: String, // Example categories: "sports", "technology", "politics", etc.
+    required: true,
+  },
   urlToImage: {
     type: String,
   },
@@ -37,4 +41,4 @@ const newsSchema = new mongoose.Schema({
 });
 
 const news = mongoose.model("news", newsSchema);
-export default news;
+module.exports = news;

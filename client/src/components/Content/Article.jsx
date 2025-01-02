@@ -7,7 +7,6 @@ const Component = styled(Card)`
 
 const Container = styled(CardContent)`
   display: flex;
-  padding: 8px;
   padding-bottom: 4px !important;
 `;
 
